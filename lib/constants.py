@@ -23,13 +23,15 @@ EARTH_FLATTENING_RATIO  = 1 / 298.257 # f = (e - p) / e
 #---------------------------------------------------------------------
 # Time constants
 #---------------------------------------------------------------------
-# Sideral Year:
-# average days between two passages of Earth at its perihelion.
-SIDERAL_YEAR = 365.2596
+SIDERAL_YEAR = 365.256366   # Earth revolution period in days
 
+ANOMALISTIC_YEAR = 365.2596 # average days between two passages of
+                            # Earth at its perihelion
+
+JULIAN_YEAR = 365.25        # Year value in Julian calendar
 
 #---------------------------------------------------------------------
 # Physic constants
 #---------------------------------------------------------------------
-LIGHT_SPEED = 299_792_458 # meters/second in space void
+LIGHT_SPEED = 2.99792458e8 # 299 792 458 meters/second in space void
 

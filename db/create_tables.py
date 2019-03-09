@@ -71,6 +71,6 @@ def main():
     else:
         print(f"Error: cannot connect to db: {db}")
 
-
+# --------------------------------------------------------------------
 if __name__ == "__main__":
     main()

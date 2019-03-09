@@ -45,10 +45,24 @@ def timeToDecimalSeconds(h: int, m: int, s: int):
     return int((h * 3600) + (m * 60) + s)
 
 
+def calcEasterDay(year: int):
+    """
+    easter day:
+    First sunday after full moon coming after each march 21st
+    """
+    pass
+
 # --------------------------------------------------------------------
 # Trigonometry functions
 # --------------------------------------------------------------------
-
+def degreesToAzimut(degrees: float):
+    """
+    degreesToAzimut(float) -> float
+    >>> degreesToAzimut(-
+    """
+    if degrees not in range(361):
+        return 0
+    return
 
 
 # --------------------------------------------------------------------
