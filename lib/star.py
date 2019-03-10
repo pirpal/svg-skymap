@@ -1,21 +1,20 @@
 #!usr/bin/env python3
 # coding: utf8
 
-from sqlalchemy.ext.declarative import declarative_base
+from base import Base
 from sqlalchemy import Column, Integer, Float, String
 
-Base = declarative_base()
 
 class Star(Base):
     __tablename__ = "stars"
 
     id           = Column(Integer, primary_key=True)
-    hip          = Column(Integer, unique=True, nullable=False)
-    hd           = Column(Integer, Unique=True, nullable=False)
-    hr           = Column(Integer, Unique=True, nullable=False)
-    gl           = Column(Integer, Unique=True, nullable=False)
-    bf           = Column(String(50))
-    proper       = Column(String(50))
+    hip          = Column(Integer, nullable=False)
+    hd           = Column(Integer, nullable=False)
+    hr           = Column(Integer, nullable=False)
+    gl           = Column(Integer, nullable=False)
+    bf           = Column(String(20))
+    proper       = Column(String(20))
     ra           = Column(Float, nullable=False)
     dec          = Column(Float, nullable=False)
     dist         = Column(Float, nullable=False)
@@ -24,7 +23,7 @@ class Star(Base):
     rv           = Column(Float)
     mag          = Column(Float, nullable=False)
     absmag       = Column(Float, nullable=False)
-    spect        = Column(String)
+    spect        = Column(String(20))
     ci           = Column(Float, nullable=False)
     x            = Column(Float, nullable=False)
     y            = Column(Float, nullable=False)
@@ -33,16 +32,17 @@ class Star(Base):
     vy           = Column(Float, nullable=False)
     vz           = Column(Float, nullable=False)
     rarad        = Column(Float, nullable=False)
-    radec        = Column(Float, nullable=False)
+    decrad        = Column(Float, nullable=False)
     pmrarad      = Column(Float, nullable=False)
     pmdecrad     = Column(Float, nullable=False)
-    bayer        = Column(String)
+    bayer        = Column(String(20))
     flam         = Column(Integer)
-    con          = Column(String)
+    con          = Column(String(3))
     comp         = Column(Integer)
     comp_primary = Column(Integer)
-    base         = Column(String)
+    base         = Column(String(20))
     lum          = Column(Float, nullable=False)
-    var          = Column(String)
-    var          = Column(Float)
-    var          = Column(Float)
+    var          = Column(String(20))
+    var_min      = Column(Float)
+    var_max      = Column(Float)
+

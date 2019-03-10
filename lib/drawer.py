@@ -1,10 +1,11 @@
 #!usr/bin/env python3
+# coding: utf8
 
 import svgwrite
 from colors import *
 
 
-class SvgSkyDrawer:
+class Drawer:
     def __init__(self, args: dict):
         self.name = args["name"]
         self.theme = THEMES[args["theme"]]
@@ -22,9 +23,7 @@ class SvgSkyDrawer:
     def HemisphericProjection(self, paper_format: dict):
         pass
 
-if __name__ == "__main__":
-    drawer = SvgSkyDrawer({
-        "name": "default",
-        "theme": "default-dark"
-    })
-    
+    def testDrawConst(const: str):
+        pass
+
+

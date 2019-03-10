@@ -1,10 +1,9 @@
 #!usr/bin/env python3
 # coding: utf8
 
-from sqlalchemy.ext.declarative import declarative_base
+from base import Base
 from sqlalchemy import Column, Integer, Float, String
 
-Base = declarative_base()
 
 class DeepSkyObject(Base):
     __tablename__ = "deep_sky_objects"
@@ -13,9 +12,9 @@ class DeepSkyObject(Base):
     ra          = Column(Float, nullable=False)
     dec         = Column(Float, nullable=False)
     dist        = Column(Float, nullable=False)
-    const       = Column(String)
+    const       = Column(String(3))
     mag         = Column(Float, nullable=False)
-    name        = Column(String)
+    name        = Column(String(20))
     rarad       = Column(Float, nullable=False)
     decrad      = Column(Float, nullable=False)
     r1          = Column(Float)
@@ -23,9 +22,9 @@ class DeepSkyObject(Base):
     angle       = Column(Float)
     dso_source  = Column(Integer)
     id1         = Column(Integer)
-    cat1        = Column(String)
+    cat1        = Column(String(8))
     id2         = Column(Integer)
-    cat2        = Column(String)
+    cat2        = Column(String(8))
     dupid       = Column(Integer)
-    dupcat      = Column(String)
+    dupcat      = Column(String(8))
     display_mag = Column(Float)
