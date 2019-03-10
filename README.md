@@ -22,7 +22,7 @@ $ virtualenv venv
 $ source venv/bin/activate
 
 # install dependencies:
-(venv) $ pip install pandas pendulum sqlite3 sqlalchemy svgwrite
+(venv) $ pip install pendulum sqlite3 Cython kivy svgwrite
 
 # create db
 $ cd db/
