@@ -1,7 +1,7 @@
 #!usr/bin/env python3
 # coding: utf8
 
-from lib.constants import *
+from constants import *
 
 # --------------------------------------------------------------------
 # Time functions
@@ -60,10 +60,7 @@ def degreesToAzimut(degrees: float):
     degreesToAzimut(float) -> float
     >>> degreesToAzimut(-
     """
-    if degrees not in range(361):
-        return 0
-    return
-
+    pass
 
 # --------------------------------------------------------------------
 # Eclipses

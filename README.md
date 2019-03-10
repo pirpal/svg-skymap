@@ -4,30 +4,56 @@ Svg Skymaps
 This is a astronomical API able to produce high quality svg maps of
 the sky.
 
-# Sources
+# Installation
+	
+You must have a installation of `sqlite3` and `Python 3.6`
+
+As its a development version, it's recommended to work in a virtual
+environnment: 
+
+
+```bash
+# clone project
+$ git clone https://github.com/pirpal/svg-skymap
+$ cd svg-skymap/
+
+# create and activate a virtual environnment:
+$ virtualenv venv
+$ source venv/bin/activate
+
+# install dependencies:
+(venv) $ pip install pandas pendulum sqlite3 sqlalchemy svgwrite
+
+# create db
+$ cd db/
+$ rm skymaps.db           # remove previous db version if any
+$ python3 db/init_db.py # create db and tables
+
+# run:
+(venv) $ python3 main.py
+
+# quit virtual environnment:
+(venv) $ deactivate
+$
+```
+
+# Sources and db tables description
 
 The database used in this app makes an heavy (and fanly) use of
 [astronexus databases](https://github.com/astronexus/HYG-Database). 
 
-This sources (csv files) are used to feed the main app db
+This sources (files `hygdata_v3.csv` and `dso.csv`) are used to feed the main app db with stars
+and deep sky objects such as Messier objects.
+
 
 | **table**          | **fields** | **source**      | **rows** | **www**                                                  |
 |--------------------|------------|-----------------|----------|----------------------------------------------------------|
-| `stars`            | 36         | hygdata_v3.csv  |          | [astronexus](https://github.com/astronexus/HYG-Database) |
+| `stars`            | 37         | hygdata_v3.csv  |          | [astronexus](https://github.com/astronexus/HYG-Database) |
 | `deep_sky_objects` | 20         | dso.csv         |          | idem                                                     |
-| `world_cities`     | 11         | worldcities.csv |          | [simplemaps](https://simplemaps.com/data/world-cities))  |
+| `world_cities`     | 11         | worldcities.csv |          | [simplemaps](https://simplemaps.com/data/world-cities)  |
 |                    |            |                 |          |                                                          |
 
-# Annexes
-## Dependencies
 
-Modules used in this app:
-
-* `pendulum`
-* `svgwrite`
-* `sqlite3`
-
-## Sources and db tables description
 ### HYG catalog
 	
 Right ascencion (`ra`) and declination (`dec`) are given for Epoch
@@ -110,29 +136,11 @@ Object's `angle` is defined only if both `r1` and `r2` are defined.
 	whose magnitude is either unknown or not representative of its
 	actual visibility
 	
-### DSO Sources
-
-Catalogs represented in the database:
-
-| **code** | **catalog**                                      |
-|----------|--------------------------------------------------|
-| `M`      | Messier (bright objects of all types)            |
-| `NGC`    | New General Catalogue (all types)                |
-| `IC`     | Index Catalog (all types)                        |
-| `C`      | Caldwell (bright objects of all types)           |
-| `Col`    | Collinder (open clusters and associations)       |
-| `PK`     | Perek + Kohoutek (planetary nebulas)             |
-| `PGC`    | Principal Galaxy Catalog                         |
-| `UGC`    | Uppsala Galaxy Catalog                           |
-| `ESO`    | European Southern Observatory Catalog (galaxies) |
-| `Ter`    | Terzian (globular clusters)                      |
-| `Pal`    | Palomar (globular clusters)                      |
-
 ### World Cities
 
 SvgSkymaps embbed a list of 13,000 cities around the world. Data are
 taken from [simplemaps.com free
-database](https://simplemaps.com/data/world-cities), thank to them!
+database](https://simplemaps.com/data/world-cities).
 
 |    **field** | **description**                               | **type** | **null?** |          **example** |
 |-------------:|-----------------------------------------------|----------|:---------:|---------------------:|
@@ -146,6 +154,7 @@ database](https://simplemaps.com/data/world-cities), thank to them!
 | `admin_name` | highest level of region's administration name | str      |           | `Nouvelle-Aquitaine` |
 | `population` | estimated city's urban population             |          | X         |            `803,000` |
 |         `id` | 10-digit unique id                            | int      |           |         `1250449238` |
+
 
 # Footnotes
 

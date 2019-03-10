@@ -33,5 +33,5 @@ JULIAN_YEAR = 365.25        # Year value in Julian calendar
 #---------------------------------------------------------------------
 # Physic constants
 #---------------------------------------------------------------------
-LIGHT_SPEED = 2.99792458e8 # 299 792 458 meters/second in space void
+LIGHT_SPEED = 2.99792458e8 # 299,792,458 meters/second in space void
 

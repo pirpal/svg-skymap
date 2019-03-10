@@ -23,6 +23,11 @@ class ConstantsTests(unittest.TestCase):
             int(EARTH_EQUATORIAL_RADIUS * EARTH_FLATTENING_RATIO / 1_000),
             21
         )
+    def testLightSpeed(self):
+        self.assertEqual(
+            LIGHT_SPEED,
+            299_792_458
+        )
 
 
 class TimeFunctionsTests(unittest.TestCase):
