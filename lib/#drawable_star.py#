@@ -1,0 +1,10 @@
+#!usr/bin/env python3
+# coding: utf8
+
+class DrawableStar:
+    def __init__(self, args={}):
+        """
+        A minimal dataset for stars display
+        """
+        self.id = args["id"],
+        self.
