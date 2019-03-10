@@ -155,7 +155,7 @@ def main():
         print("done")
         print("Creating deep_sky_objects table...", end="")
         createTable(conn, sqlite3_create_deepskyobjects_table)
-        print("done.")
+        print("done")
         print("Creating cities table.............", end="")
         createTable(conn, sqlite3_create_cities_table)
         print("done")

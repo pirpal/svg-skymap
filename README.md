@@ -2,7 +2,7 @@ Svg Skymaps
 --------------
 
 This is a astronomical API able to produce high quality svg maps of
-the sky.
+the sky
 
 # Installation
 	
